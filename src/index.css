@@ -1,0 +1,11 @@
+body {
+  background: var(--tg-theme-secondary-bg-color, white);
+  padding: 0;
+  margin: 0;
+}
+
+.footer_tabbar__floating {
+  position: absolute;
+  margin-top: -6px;
+  margin-left: 44px;
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "91",
+    "title": "The tails of the northern star",
+    "author": "V. Groderick",
+    "ageRating": "16+",
+    "subject": "physics",
+    "location": "library #1",
+    "uuid": "9D0C1362-56E8-4943-AD3C-2ABDDEA7CDBF",
+    "takenAt": "2023-10-01T12:00:00Z"
+  },
+  {
+    "id": "92",
+    "title": "Algorithms I+",
+    "author": "D. Knutt",
+    "ageRating": "16+",
+    "subject": "physics",
+    "location": "library #1",
+    "uuid": "E26A11A2-FBC2-45D8-89B0-DC25D81AA460",
+    "takenAt": "2023-10-01T12:00:00Z"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "title": "The tails of the northern star",
+    "author": "V. Quidji",
+    "ageRating": "16+",
+    "subject": "physics",
+    "location": "library #1"
+  },
+  {
+    "id": "2",
+    "title": "Algorithms I+",
+    "author": "D. Knutt",
+    "ageRating": "16+",
+    "subject": "physics",
+    "location": "library #1"
+  },
+  {
+    "id": "3",
+    "title": "Algorithms II",
+    "author": "D. Knutt",
+    "ageRating": "16+",
+    "subject": "physics",
+    "location": "library #1"
+  },
+  {
+    "id": "4",
+    "title": "Algorithms 4",
+    "author": "D. Knutt",
+    "ageRating": "18+",
+    "subject": "physics",
+    "location": "library #1"
+  },
+  {
+    "id": "5",
+    "title": "Algorithms 5",
+    "author": "D. Knutt",
+    "ageRating": "18+",
+    "subject": "physics",
+    "location": "library #1"
+  },
+  {
+    "id": "6",
+    "title": "Algorithms 6",
+    "author": "D. Knutt",
+    "ageRating": "18+",
+    "subject": "physics",
+    "location": "library #1"
+  },
+  {
+    "id": "7",
+    "title": "Algorithms 7",
+    "author": "D. Knutt",
+    "ageRating": "18+",
+    "subject": "physics",
+    "location": "library #1"
+  }
+]
