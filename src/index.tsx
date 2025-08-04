@@ -8,7 +8,7 @@ import { retrieveLaunchParams } from "@telegram-apps/sdk-react";
 import { Root } from "@/components/Root.tsx";
 import { BooksServiceProvider } from "@/services/BookService/Context.tsx";
 import { mockBooksDataProvider } from "@/services/BookService/impl/Mock.ts";
-import { apiBooksDataProvider } from "@/services/BookService/impl/Remote.ts";
+// import { apiBooksDataProvider } from "@/services/BookService/impl/Remote.ts";
 import { EnvUnsupported } from "@/components/EnvUnsupported.tsx";
 import { init } from "@/init.ts";
 import "react-material-symbols/rounded";
