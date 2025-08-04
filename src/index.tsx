@@ -33,12 +33,12 @@ try {
     eruda: debug && ["ios", "android"].includes(platform),
     mockForMacOS: platform === "macos",
   }).then(() => {
+    // temporary use only mock proider
+    // import.meta.env.DEV ? mockBooksDataProvider : apiBooksDataProvider
     root.render(
       <StrictMode>
         <BooksServiceProvider
-          provider={
-            import.meta.env.DEV ? mockBooksDataProvider : apiBooksDataProvider
-          }
+          provider={ mockBooksDataProvider }
         >
           <Root />
         </BooksServiceProvider>
