@@ -2,6 +2,13 @@ import { useBooksService } from "@/services/BookService/Context";
 import { useEffect, useState } from "react";
 import { Book, BookFilters } from "../types";
 
+/**
+ * [SCNR-1] Workflow and operations for searching the books
+ */
+
+/**
+ * Types that provides an interface for the tables.
+ */
 export type UserBooksSearchType = {
   books: Book[];
   setFilters: (filters: BookFilters | null) => void;

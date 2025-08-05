@@ -23,16 +23,19 @@ export const TakeBookPage: FC = () => {
       qrScanner.isOpened(); // false
       const promise = qrScanner.open({
         text: "Scan the QR",
-        async onCaptured(qr: string) {
-          const book = await appendToMyBooks(qr);
-          if (book) {
+        onCaptured(qr: string) {
+          appendToMyBooks(qr).then((book)=> {
+            if (book) {
             void feedback.notifySuccess(`"{book.title}" was taken`);
             qrScanner.close();
-          }
+          }}).catch((e : Error) =>
+            feedback.notifyError('Unable to add book', e.message)
+          )
         },
       });
       qrScanner.isOpened(); // true
       await promise;
+      qrScanner.isOpened(); // false
     } else {
       alert("use telegram please");
     }
