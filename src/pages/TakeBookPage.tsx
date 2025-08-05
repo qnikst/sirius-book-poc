@@ -26,7 +26,7 @@ export const TakeBookPage: FC = () => {
         onCaptured(qr: string) {
           appendToMyBooks(qr).then((book)=> {
             if (book) {
-            void feedback.notifySuccess(`"{book.title}" was taken`);
+            void feedback.notifySuccess(`"${book.title}" was taken`);
             qrScanner.close();
           }}).catch((e : Error) =>
             feedback.notifyError('Unable to add book', e.message)
