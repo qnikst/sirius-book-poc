@@ -55,7 +55,7 @@ export const TakeBookPage: FC = () => {
               size="l"
               stretched
               before={<MaterialSymbol icon="qr_code" size={24} fill />}
-              onClick={void scanQr}
+              onClick={scanQr}
             >
               Scan QR
             </Button>
