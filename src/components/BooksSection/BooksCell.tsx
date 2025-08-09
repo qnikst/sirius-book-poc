@@ -17,7 +17,7 @@ type BookCellProps = {
  * @returns
  */
 export function BookCell({ book, actions = () => [] }: BookCellProps) {
-  let [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   return (
     <Cell

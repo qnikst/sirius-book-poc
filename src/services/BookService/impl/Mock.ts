@@ -1,5 +1,5 @@
 import { BooksDataProvider } from "@/services/BookService/Interface";
-import { Book, MyBook } from "@/domain/books/types";
+import { Book, BookFilters, MyBook } from "@/domain/books/types";
 import { fromMyBookDTO, MyBookDTO } from "@/services/BookService/dto";
 import mockBooks from "@/data/books.json";
 import mockMyBooks from "@/data/my-books.json";
@@ -22,13 +22,29 @@ export class MockBooksDataProvider implements BooksDataProvider {
     this.myBooks = initialBooks;
   }
 
-  async fetchBooks(page: number, filters?: { message?: string }) {
+  async fetchBooks(page: number, filters?: BookFilters) {
+    console.log(`Fetching books with filters: ${JSON.stringify(filters)}`);
     const mock: Book[] = mockBooks;
     const matchedBooks = mock.filter((book) => {
       if (filters && filters.message) {
         return (
           book.title.toLowerCase().includes(filters.message.toLowerCase()) ||
           book.author.toLowerCase().includes(filters.message.toLowerCase())
+        );
+      }
+      return true;
+    }).filter((book) => {
+      if (filters && filters.authors && filters.authors.length > 0) {
+        return filters.authors.some((author) => {
+          return book.author.toLowerCase().includes(author.toLowerCase());
+        }
+        );
+      }
+      return true;
+    }).filter((book) => {
+      if (filters && filters.titles && filters.titles.length > 0) {
+        return filters.titles.some((title) =>
+          book.title.toLowerCase().includes(title.toLowerCase()),
         );
       }
       return true;
