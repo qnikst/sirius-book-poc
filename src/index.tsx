@@ -37,9 +37,7 @@ try {
     // import.meta.env.DEV ? mockBooksDataProvider : apiBooksDataProvider
     root.render(
       <StrictMode>
-        <BooksServiceProvider
-          provider={ mockBooksDataProvider }
-        >
+        <BooksServiceProvider provider={mockBooksDataProvider}>
           <Root />
         </BooksServiceProvider>
       </StrictMode>,

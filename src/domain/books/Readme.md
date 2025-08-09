@@ -25,16 +25,20 @@ Use-case scenarios:
 
 ### SCNR-1. User watching books and find interesting ones
 
-User can list the books, my adding a FilterStructure.
+A User can list the books, filtering an interesting ones.
 The purpose is to find a library where a book is and if it's available.
+
+See hooks/useBooksSearch
 
 ### SCNR-2. User takes a book
 
-User scans QR in the book and stores info that the book is taken by
+A visitor scans QR in the book and stores info that the book is taken by
 that user.
 
 ### SCNR-3. User returns a book
 
-User can return a book/
+Visitors can list taken books, and they can return a book.
+
+See hooks/useBooksSearch
 
 ## Constraints

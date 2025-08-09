@@ -1,9 +1,9 @@
 {
-  "name": "sirius-books-poc",
+  "name": "sirius-book-poc",
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://qnikst.github.io/sirius-books-poc/",
+  "homepage": "https://qnikst.github.io/sirius-book-poc/",
   "scripts": {
     "deploy": "gh-pages -d dist",
     "dev": "vite",

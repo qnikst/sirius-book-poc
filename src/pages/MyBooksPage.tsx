@@ -1,16 +1,17 @@
 import { List, Section, Divider } from "@telegram-apps/telegram-ui";
 import { type FC } from "react";
-import {
-  BooksTable,
-  useMyBooks,
-} from "@/components/BooksSection";
+import { BooksTable, useMyBooks } from "@/components/BooksSection";
 
 import { Page } from "@/components/Page.tsx";
 import { isMyBook } from "@/domain/books/types/MyBook";
 import { useFeedback } from "@/components/feedback/context/useFeedback";
 
 export const MyBooksPage: FC = () => {
-  const { myBooks, loading, actions: {returnBookByUuid}} = useMyBooks();
+  const {
+    myBooks,
+    loading,
+    actions: { returnBookByUuid },
+  } = useMyBooks();
   const feedback = useFeedback();
 
   return (
@@ -34,10 +35,10 @@ export const MyBooksPage: FC = () => {
                     action: async () => {
                       await returnBookByUuid(book.uuid);
                       feedback.notifySuccess(
-                            `"${book.title}" was marked as returned`,
-                            "Do not forget to return the book!",
-                          );
-                      }
+                        `"${book.title}" was marked as returned`,
+                        "Do not forget to return the book!",
+                      );
+                    },
                   },
                 ]
               : []

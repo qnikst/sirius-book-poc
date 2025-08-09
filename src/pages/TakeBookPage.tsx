@@ -15,7 +15,9 @@ import { useFeedback } from "@/components/feedback/context/useFeedback";
 import { useMyBooks } from "@/domain/books/hooks/useMyBooks";
 
 export const TakeBookPage: FC = () => {
-  const { actions: {appendToMyBooks} } = useMyBooks();
+  const {
+    actions: { appendToMyBooks },
+  } = useMyBooks();
   const feedback = useFeedback();
 
   const scanQr = async () => {
@@ -24,13 +26,16 @@ export const TakeBookPage: FC = () => {
       const promise = qrScanner.open({
         text: "Scan the QR",
         onCaptured(qr: string) {
-          appendToMyBooks(qr).then((book)=> {
-            if (book) {
-            void feedback.notifySuccess(`"${book.title}" was taken`);
-            qrScanner.close();
-          }}).catch((e : Error) =>
-            feedback.notifyError('Unable to add book', e.message)
-          )
+          appendToMyBooks(qr)
+            .then((book) => {
+              if (book) {
+                void feedback.notifySuccess(`"${book.title}" was taken`);
+                qrScanner.close();
+              }
+            })
+            .catch((e: Error) =>
+              feedback.notifyError("Unable to add book", e.message),
+            );
         },
       });
       qrScanner.isOpened(); // true

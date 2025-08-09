@@ -12,7 +12,7 @@ export function Snackbar({
   return (
     <TgSnackbar
       before={message.icon && <MaterialSymbol icon={message.icon} size={24} />}
-      after={<MaterialSymbol icon='close' size={24} />}
+      after={<MaterialSymbol icon="close" size={24} />}
       duration={message.duration}
       description={message.details}
       onClose={onClose}
