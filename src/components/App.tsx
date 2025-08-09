@@ -9,6 +9,7 @@ import { AppRoot } from "@telegram-apps/telegram-ui";
 
 import { routes } from "@/navigation/routes.tsx";
 import { MyBooksProvider } from "../domain/books/hooks/useMyBooks";
+import "react-material-symbols/outlined";
 
 export function App() {
   const lp = useMemo(() => retrieveLaunchParams(), []);
