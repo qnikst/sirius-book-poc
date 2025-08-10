@@ -21,7 +21,6 @@ export default function StringFilterEditor({
 
   useEffect(() => {
     setTimeout(() => inputRef.current?.focus(), 0);
-    // inputRef.current?.focus();
   }, []);
 
   return (

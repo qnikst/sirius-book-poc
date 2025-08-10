@@ -7,11 +7,11 @@ type FilterEditorProps = {
   open: boolean;
   initialValue?: string;
   onOpenChange: (open: boolean) => void;
-  onSave: (value: string) => void;
+  onSave: (value: string, label?: string) => void;
   onRemove: () => void;
   children: (
     value: string,
-    onChange: (val: string) => void,
+    onChange: (val: string, label?: string) => void,
     onSave: () => void,
   ) => React.ReactNode;
 };
@@ -28,6 +28,15 @@ export default function FilterEditor({
   children,
 }: FilterEditorProps) {
   const [value, setValue] = useState(initialValue || "");
+  const [label, setLabel] = useState<string | null>(null);
+
+  const commit = () => {
+     if (!!label) {
+          onSave(value, label);
+        } else {
+          onSave(value);
+        }
+  };
 
   return (
     <Modal onOpenChange={onOpenChange} open={open}>
@@ -41,11 +50,14 @@ export default function FilterEditor({
         }
       ></Modal.Header>
 
-      {children(value, setValue, () => onSave(value))}
+      {children(value, (value,label) => {
+        setValue(value);
+        label && setLabel(label);
+      }, commit)}
 
       <InlineButtons mode="bezeled">
         <InlineButtons.Item text="Remove" onClick={() => onRemove()} />
-        <InlineButtons.Item text="Save" onClick={() => onSave(value)} />
+        <InlineButtons.Item text="Save" onClick={commit} />
       </InlineButtons>
     </Modal>
   );
