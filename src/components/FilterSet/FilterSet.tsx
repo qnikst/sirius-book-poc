@@ -54,7 +54,7 @@ export default function FilterSet({ filters: filtersConfig }: FilterSetProps) {
               </IconButton>
             }
           >
-            {filter.value}
+            {filter.label || filter.value}
           </ButtonCell>
         );
       })}

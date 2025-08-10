@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 
 type StringFilterEditorProps = {
   value?: string;
-  onChange: (val: string) => void;
+  onChange: (val: string, label?: string) => void;
   onSave?: () => void;
 } & Omit<InputProps, "value" | "onChange" | "onKeyDown">;
 

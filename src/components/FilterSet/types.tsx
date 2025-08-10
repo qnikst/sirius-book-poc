@@ -2,9 +2,10 @@ import { SymbolCodepoints } from "react-material-symbols";
 
 // types.ts
 export type Filter = {
-  id: string;
-  category: string;
-  value: string;
+  id: string;       // Internal unique identifier
+  category: string; // Name of the category (used to search for properties and build request)
+  value: string;    // The actual value of the filter
+  label?: string;   // Optional label for better UI representation
 };
 
 export type FilterCategoryConfig = {

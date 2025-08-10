@@ -23,14 +23,14 @@ export function useFilters(
     onChange(filters);
   };
 
-  const addFilter = (category: string, value: string) => {
-    const newFilter = { id: Date.now().toString(), category, value };
+  const addFilter = (category: string, value: string, label?: string) => {
+    const newFilter = { id: Date.now().toString(), category, value, label };
     setFiltersNotify([...filters, newFilter]);
   };
 
-  const updateFilter = (id: string, newValue: string) => {
+  const updateFilter = (id: string, newValue: string, newLabel?: string) => {
     setFiltersNotify(
-      filters.map((f) => (f.id === id ? { ...f, value: newValue } : f)),
+      filters.map((f) => (f.id === id ? { ...f, value: newValue, label: newLabel } : f)),
     );
   };
 
