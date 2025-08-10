@@ -30,13 +30,7 @@ export default function FilterEditor({
   const [value, setValue] = useState(initialValue || "");
   const [label, setLabel] = useState<string | null>(null);
 
-  const commit = () => {
-     if (!!label) {
-          onSave(value, label);
-        } else {
-          onSave(value);
-        }
-  };
+  const commit = () => { onSave(value, label ?? undefined) };
 
   return (
     <Modal onOpenChange={onOpenChange} open={open}>

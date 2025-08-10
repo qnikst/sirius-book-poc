@@ -1,2 +1,3 @@
 import StringFilterEditor from "./StringFilterEditor";
-export { StringFilterEditor };
+import EnumFilterEditor from "./EnumFilterEditor";
+export { StringFilterEditor, EnumFilterEditor };

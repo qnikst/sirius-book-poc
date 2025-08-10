@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Section, Input } from "@telegram-apps/telegram-ui";
 import { BookFilters } from "@/domain/books/types";
 import {
+  EnumFilterEditor,
   FilterSet,
   StringFilterEditor,
   useFilters,
 } from "@/components/FilterSet";
-import { SymbolCodepoints } from "react-material-symbols";
+import { MaterialSymbol, SymbolCodepoints } from "react-material-symbols";
 import { Filter } from "@/components/FilterSet/types";
 
 interface BooksFilterProps {
@@ -34,6 +35,7 @@ export function BooksFilter({ setFilters }: BooksFilterProps) {
         onSave: () => void,
       ) => (
         <StringFilterEditor
+          before={<MaterialSymbol icon="book" size={24} />}
           value={value}
           onChange={onChange}
           header="Find by title"
@@ -50,15 +52,40 @@ export function BooksFilter({ setFilters }: BooksFilterProps) {
         onChange: (val: string) => void,
         onSave: () => void,
       ) => (
-        <StringFilterEditor
-          value={value}
-          onChange={onChange}
-          header="Find by author"
-          placeholder="Input author..."
-          onSave={onSave}
-        />
+        <Section header="Find by author">
+          <StringFilterEditor
+            value={value}
+            before={<MaterialSymbol icon="person" size={24} />}
+            onChange={onChange}
+            header="Find by author"
+            placeholder="Input author..."
+            onSave={onSave}
+          />
+        </Section>
       ),
     },
+    location: {
+      category: "Find by location",
+      icon: "location_on" as SymbolCodepoints,
+      editorComponent: (
+        value: string,
+        onChange: (val: string, label?: string) => void,
+        onSave: () => void,
+      ) => (
+        <Section header="Find by location">
+          <EnumFilterEditor
+            value={value}
+            before={<MaterialSymbol icon="location_on" size={24} />}
+            options={[{ label: "Location #1", value: "loc1" }
+                     ,{ label: "Location #2", value: "loc2" }
+                     ]}
+            onChange={onChange}
+            header="Find by location"
+            onSave={onSave}
+          />
+        </Section>
+      ),
+    }
   };
 
   const [filterValue, setFilterValue] = useState("");
